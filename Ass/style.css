@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Mitr", sans-serif;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    /* ล็อกหน้าจอไม่ให้ไถออกข้าง */
+}
+
+.mitr-regular {
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.mitr-medium {
+    font-family: "Mitr", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.header {
+    background-color: #F3AC3B;
+    padding: 45px 0;
+    width: 100%;
+}
+
+.header a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 0;
+    font-size: 1.8em;
+    color: white;
+    line-height: 1;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+/* สไตล์ลิงก์หน้าปกติที่ไม่ได้อยู่ */
+a.hover-underline {
+    position: relative;
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+
+a.hover-underline.active {
+    color: #926216;
+
+}
+
+
+a.hover-underline::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #9d6b19;
+    /* สีเส้นใต้ */
+    transition: width 0.3s;
+}
+
+
+a.hover-underline:hover::after,
+a.hover-underline.active::after {
+    width: 100%;
+}
+
+.title {
+    margin-top: 20px;
+}
+
+/* กำหนดความกว้างสูงสุดของรูปภาพเพื่อไม่ให้ใหญ่เกินไป */
+.content-img {
+    max-width: 2000px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.content-img:hover {
+    transform: scale(1.01);
+    /* ซูมขยายขึ้น 3% */
+    box-shadow: 0 10px 25px #9d6b19 !important;
+    /* เงาเข้มและนุ่มขึ้น */
+    cursor: pointer;
+}
+
+.custom-paragraph {
+    max-width: 550px;
+    
+}
+
+.text {
+    margin-top: 50px;
+}
+
+/* ปรับรูปภาพและตั้งค่า Animation */
+.content-img-card {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    display: block;
+}
+
+/* เอฟเฟกต์ Hover ซูมภาพ */
+.img-container {
+    cursor: pointer;
+}
+
+.img-container:hover .content-img-card {
+    transform: scale(1.08);
+    /* ซูมขยาย 8% */
+    filter: brightness(1.05);
+}
+
+/* ปุ่มสีเหลืองมัสตาร์ด (#F3AC3B) */
+.btn-custom-accent {
+    background-color: #F3AC3B;
+    color: #ffffff !important;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-custom-accent:hover {
+    background-color: #d99327;
+    box-shadow: 0 4px 10px rgba(243, 172, 59, 0.4);
+    transform: translateY(-2px);
+}
+
+/* ตกแต่งส่วน SDG Icon */
+.sdg-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sdg-card:hover {
+    transform: translateY(-5px);
+    /* ลอยขึ้นเล็กน้อยเมื่อชี้เมาส์ */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.content-sdg-img {
+    aspect-ratio: 1 / 1;
+    /* กำหนดให้เป็นสี่เหลี่ยมจัตุรัสเสมอ */
+    object-fit: cover;
+    display: block;
+}
+
+
+
+.footer,
+.footer-bg {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F3AC3B;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+   
+    font-weight: 400;
+    padding: 45px 0;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.footer p,
+.footer-text {
+    margin: 0 !important;
+    line-height: 1;
+    white-space: nowrap;/* บังคับแถวเดียว */
+    
+}
+
+/* ขนาดรูปไอคอนทรงวงกลม */
+.icon-circle-wrapper {
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.icon-circle-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.custom-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.custom-card:hover .icon-circle-img {
+    transform: scale(1.1);
+}
+
+
+@media (max-width: 767.98px) {
+    .header, 
+    .footer, 
+    .footer-bg {
+        padding: 25px 0 !important; 
+    }
+
+    .navbar-nav {
+        gap: 10px; 
+    }
+
+    .header a, 
+    a.hover-underline {
+        font-size: 0.85rem !important; /* ย่อขนาดข้อความเมนู */
+        padding: 6px 8px;
+        white-space: nowrap;
+    }
+
+    .footer p, 
+    .footer-text {
+        font-size: 0.85rem !important; /* ย่อขนาดข้อความ Footer ให้เท่ากับ Nav */
+    }
+
+    /* เส้นใต้ค้างสำหรับหน้าปัจจุบันบนมือถือ */
+    a.hover-underline.active::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #9d6b19;
+    }
+
+    /* ตอบสนองการแตะสัมผัส (Touch Feedback) */
+    a.hover-underline:active {
+        opacity: 0.8;
+        transform: scale(0.96);
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .col-xl-2-4 {
+        flex: 0 0 auto;
+        width: 20%;
+    }
+}
